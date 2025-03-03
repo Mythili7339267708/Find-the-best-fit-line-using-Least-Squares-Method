@@ -1,4 +1,6 @@
 # Implementation of Univariate Linear Regression
+# NAME: V MYTHILI(CSE)
+# REG NO: 212223040123
 ## AIM:
 To implement univariate Linear Regression to fit a straight line using least squares.
 
@@ -17,16 +19,46 @@ To implement univariate Linear Regression to fit a straight line using least squ
 6. Obtain the straight line equation Y=mX+b and plot the scatterplot.
 
 ## Program:
+
+Name: V MYTHILI
+REG NO: 212223040123
 ```
-/*
-Program to implement univariate Linear Regression to fit a straight line using least squares.
-Developed by: 
-RegisterNumber:  
-*/
+import numpy as np
+import matplotlib.pyplot as plt
+
+x=np.array(eval(input()))
+y=np.array(eval(input()))
+
+x_mean=np.mean(x)
+y_mean=np.mean(y)
+
+num = 0
+dnum = 0
+
+for i in range(len(x)):
+  num+=(x[i]-x_mean)*(y[i]-y_mean)
+  dnum+=(x[i]-x_mean)**2
+
+a = num/dnum
+
+b = y_mean - a*x_mean
+
+print("slope=",a)
+print("y-intercept=",b)
+y_pre = a*x+b
+print(y_pre)
+
+plt.scatter(x,y)
+plt.plot(x,y_pre,color="blue")
+plt.show()
+
 ```
 
 ## Output:
-![best fit line](sam.png)
+
+
+![image](https://github.com/user-attachments/assets/b7f6517f-1e2d-4607-afb4-d819a95ad80f)
+
 
 
 ## Result:
